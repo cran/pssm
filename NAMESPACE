@@ -1,0 +1,6 @@
+import(MASS,abind,MHadaptive,methods)
+importFrom("numDeriv",grad)
+export("pssm","pssm.survivalcurv","pssm.generate.data",
+       "pssm.simulate","pssm.power","pssm.noninferiority.boundary")
+exportClasses("pssm","pssm.summary")
+exportMethods(summary,print,plot)
