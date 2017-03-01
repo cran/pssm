@@ -47,6 +47,7 @@ pssm.noninferiority.boundary<-function(x,time,cov1,cov2,
     prop_sigma=xx@covariance.estimates
     mt=dim(prop_sigma)[1]
     prop=ginv(.1*diag(mt)+ginv(prop_sigma))
+    #browser()
     mh=Metro_Hastings(xx@loglike,xx@estimates,prop,iterations=iterations)
 
     #mh=Metro_Hastings1(xx@loglike,xx@estimates,prop_sigma=xx@covariance.estimates,iterations=iterations)
@@ -55,12 +56,16 @@ pssm.noninferiority.boundary<-function(x,time,cov1,cov2,
     value=rep(0,ms-st+1)
     j=0
     obj=x
+    #browser()
+    crv=matrix(0,ms-st+1,2)
     for (jj in st:ms){
-      j=jj+1
-      obj@estimates=mh$trace[j,]
+      j=j+1
+      obj@estimates=mh$trace[jj,]
       curv=pssm.survivalcurv(obj,cov1,cov2,timeToProgression=FALSE,covariance=FALSE)(time,0)
       value[j]=sum(curv$estimate*contrast)
+      crv[j,]=curv$estimate
     }
+    browser()
     upper.out[i]=quantile(value,alpha)
     }
     #attributes(upper.out)<-list(density=density(value),values=value)

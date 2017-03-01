@@ -19,7 +19,7 @@ See:\code{\link{pssm.object}}
     \item{\code{call}:}{Object of class \code{"call"}}
     \item{\code{convergence}:}{Object of class \code{"numeric"} Integer which is zero if algorythm converged }
     \item{\code{loglike}:}{object of class \code{"function"} log-likelihood function}
-    \item{\code{estimates}:}{Object of class \code{"numeric"}Numeric vector of estimated parameters (see \code{\link{pssm.object}}), note hazards are log transformed}
+    \item{\code{estimates}:}{Numeric vector of estimated parameters,first are m*(m+1)/2 parameters for the time from progression to death(if (prog,death) then ,(1,1),(1,2)..,(2,1)...), followed by m time to progression estimators followed by the covariate coefficients for time to progression and the covariate coefficients from time to progression to death, hazards are log transformed}
     \item{\code{se.estimates}:}{Object of class \code{"numeric"} Numeric vector of standard errors of the estimated parameters }
     \item{\code{covariance.estimates}:}{Object of class \code{"matrix"} Variance covariance matrix of estimates }
     \item{\code{estimates.progression}:}{Object of class \code{"numeric"} Covariate coefficients for the time to progression covariates}

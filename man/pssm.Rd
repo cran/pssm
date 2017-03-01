@@ -14,7 +14,7 @@ a progression interval with a right endoint that is at or before the death time.
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
 }
 \usage{
-pssm(progr, survv, dat, intervals = 5, start = NULL, rescale = 1)
+pssm(progr, survv, dat, intervals = 5, start = NULL, rescale = 1, prior=NULL)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -50,6 +50,7 @@ pssm(progr, survv, dat, intervals = 5, start = NULL, rescale = 1)
   survival or progression time is greater than \eqn{m r}.  
 %%     ~~Describe \code{rescale} here~~
 }
+ \item{prior}{A vector of prior values for the covariates affecting the hazards, set to 0 if NULL.}
 }
 
 \value{An S4 \code{\link{pssm.object}} containing the estimated parameters, their standard errors, 

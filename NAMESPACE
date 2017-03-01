@@ -1,5 +1,8 @@
 import(MASS,abind,MHadaptive,methods)
 importFrom("numDeriv",grad)
+importFrom("graphics", "legend", "lines")
+importFrom("stats", "approx", "as.formula", "optim", "pnorm", "qnorm",
+             "quantile", "runif", "terms", "uniroot")
 export("pssm","pssm.survivalcurv","pssm.generate.data",
        "pssm.simulate","pssm.power","pssm.noninferiority.boundary")
 exportClasses("pssm","pssm.summary")

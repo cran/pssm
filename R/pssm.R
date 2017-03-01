@@ -1,8 +1,8 @@
 pssm <-
-  function(progr,survv,dat,intervals=5,start=NULL,rescale=1){
+  function(progr,survv,dat,intervals=5,start=NULL,rescale=1,prior=NULL){
     #avoid note on lack of declaration for variables declared by "assign"
     loglike=rescale1=m=m1=outp=message=NULL
-  prior=NULL #prior is not used in estimation but retained in log-likelihood
+  #prior=NULL #prior is not used in estimation but retained in log-likelihood
   #for metropolis hastings
 	call=match.call()	
     #library(MASS)
