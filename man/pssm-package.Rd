@@ -6,13 +6,6 @@
 \description{Fits a joint model for interval censored time to progression and subsequent survival. Progression is assumed
 to always occure before death.  The underlying hazard function is assumed to be piecewise constant.}
 \details{
-\tabular{ll}{
-Package: \tab pssm\cr
-Type: \tab Package\cr
-Version: \tab 1.0\cr
-Date: \tab 2013-06-27\cr
-License: \tab Public \cr
-}
 The function \code{\link{pssm}} fits the model and outputs a \code{\link{pssm-object}} S4 object, this can input to  \code{\link{pssm.survivalcurv}} which 
 outputs a function of time, that can be used to create time to 
 progression and survival curves for the model with specified covariate values.

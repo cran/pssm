@@ -1,5 +1,5 @@
-d8539fcd429dc8cf407f32b572852d4e *DESCRIPTION
-d714332ce2f7501ff246b9e2e463892a *NAMESPACE
+6dc7664e2871282f5d6c45a3cce6ce03 *DESCRIPTION
+a4660296a082aa07b6dc9dd862d0bd76 *NAMESPACE
 0c8589873f2619e3cd3f48688b106f08 *R/generic_functions.R
 4c4a6b80a600f81960118535bad05adf *R/llikef.R
 f49bd2d148fc2e25d60d862ea63a6360 *R/pssm.R
@@ -11,11 +11,11 @@ b4d8cf12d4929da72247f2508a64b87f *R/pssm.survivalcurv.R
 0cfd25cc97f898c146b30b9b5b9de7ed *R/rprog.R
 c7156d6504f9670c1bdf8b5935cf3cc3 *R/rsurv.R
 e015bf73faeeae43faecfe354489a8b8 *R/startv.R
-cbbdb2ed816b7d462feae7b0dc5a3cc9 *man/plot-methods.Rd
+de0005d1eef1bb6db236208d59a16077 *man/plot-methods.Rd
 31e04cdde8b495f35a1e0f52ce67d6f9 *man/print-methods.Rd
 12f660bc483134e35edca4eba3f1180d *man/pssm-class.Rd
-996a62ff8e7b550d93671ec396de5665 *man/pssm-package.Rd
-5101f932286a921bfeff64f8099e8520 *man/pssm.Rd
+61de964010a583e1589df8afe1393678 *man/pssm-package.Rd
+52571ee4b7fdbb2f56c506619e2f6807 *man/pssm.Rd
 5176ab3431cdbc3ea6be1d63bf580e5d *man/pssm.generate.data.Rd
 7d16c298c0f8f353d6da1bdfd72ac34e *man/pssm.noninferiorityboundary.Rd
 b26ddf460917028d9d3dbf74ca22a085 *man/pssm.power.Rd

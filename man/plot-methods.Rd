@@ -36,4 +36,3 @@ The time for progression curve is plotted note that cov1 and cov2 must be matric
 showClass("pssm")
 }
 \keyword{methods}
-\keyword{ ~~ other possible keyword(s) ~~ }

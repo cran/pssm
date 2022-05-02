@@ -4,10 +4,10 @@
 \title{Fits a joint piecewise exponential model for progression and survival
 %%  ~~function to do ... ~~
 }
-\description{'pssm' fits a proportional hazards model where the underlying hazard of time to progression 
-and subsequent survival are both piecewise constant. The hazard from progression to death is different for 
+\description{'pssm' fits a proportional hazards model where the underlying hazard of time to progression
+and subsequent survival are both piecewise constant. The hazard from progression to death is different for
 each interval for which the hazard of progression is constant. The covariates for progression and death after progression
-may be different. Time to progression is interval censored while time to death is right censored. Patients who die must have 
+may be different. Time to progression is interval censored while time to death is right censored. Patients who die must have
 a progression interval with a right endoint that is at or before the death time.
 
 
@@ -18,13 +18,13 @@ pssm(progr, survv, dat, intervals = 5, start = NULL, rescale = 1, prior=NULL)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{progr}{a formula object of the form Surv(time0,time1)~covariates for the time to progression, 
-  if NULL it fits a piecewise exponential model for survival time only. The progression time is assumed to be 
+  \item{progr}{a formula object of the form Surv(time0,time1)~covariates for the time to progression,
+  if NULL it fits a piecewise exponential model for survival time only. The progression time is assumed to be
   interval censored between time0 and time1.
   If progression does not occur then time1=NA.
 %%     ~~Describe \code{progr} here~~
 }
-  \item{survv}{a formula object of the form Surv(time,cns)~covariates for time from 
+  \item{survv}{a formula object of the form Surv(time,cns)~covariates for time from
   progression to death, if NULL a model for time to progression is fit. The code for "cns" is 1=dead, 0=alive.
 %%     ~~Describe \code{survv} here~~
 }
@@ -38,27 +38,28 @@ pssm(progr, survv, dat, intervals = 5, start = NULL, rescale = 1, prior=NULL)
 }
   \item{start}{starting values for the parameter vector, suppose \code{intervals=m} and there are \eqn{n_1} progression covariates and \eqn{n_2} survival covariates
   then the parameter vector will be of length,
-   \eqn{m+m(m+1)/2+n_1+n_2} the survival covariates are ordered by progression interval 
-  i.e the first \eqn{m}, are survival intervals for patients who progressed between time 0 and 1,the next \eqn{m-1} or for patients who 
+   \eqn{m+m(m+1)/2+n_1+n_2} the survival covariates are ordered by progression interval
+  i.e the first \eqn{m}, are survival intervals for patients who progressed between time 0 and 1,the next \eqn{m-1} or for patients who
   progressed between time 1 and 2,\dots
-  The first \eqn{m*(m+1)/2} elements are the log-survival hazard, the next \eqn{m} the log-progression hazard followed by the 
+  The first \eqn{m*(m+1)/2} elements are the log-survival hazard, the next \eqn{m} the log-progression hazard followed by the
   progression covariate vector followed by the survival covariate vector.
   If NULL the starting values are estimated.
 %%     ~~Describe \code{start} here~~
 }
-  \item{rescale}{A number that will multiply the survival and progression times before processing.  This will be changed by the program if the maximum 
-  survival or progression time is greater than \eqn{m r}.  
+  \item{rescale}{A number that will multiply the survival and progression times before processing.  This will be changed by the program if the maximum
+  survival or progression time is greater than \eqn{m r}.
 %%     ~~Describe \code{rescale} here~~
 }
  \item{prior}{A vector of prior values for the covariates affecting the hazards, set to 0 if NULL.}
 }
 
-\value{An S4 \code{\link{pssm.object}} containing the estimated parameters, their standard errors, 
+\value{An S4 \code{\link{pssm.object}} containing the estimated parameters, their standard errors,
 their variance covariance matrix, and details of the model that was fit. The generic functions plot, summary and print are defined for the object.
-  
+
 }
-%%\references{
-%% ~put references to the literature/web site here ~}
+\references{Assessing survival benefit when treatment delays disease progression
+DA Schoenfeld, DM Finkelstein
+Clinical Trials 13 (3), 352-357}
 \author{David A. Schoenfeld
 %%  ~~who you are~~
 }
@@ -84,7 +85,7 @@ their variance covariance matrix, and details of the model that was fit. The gen
 ##--	or do  help(data=index)  for the standard data sets.
 #generate data
 set.seed(359)
-u<-pssm.generate.data(theta1=.5,theta2=0,phaz.progression=rep(log(-log(.3)/4),5),	
+u<-pssm.generate.data(theta1=.5,theta2=0,phaz.progression=rep(log(-log(.3)/4),5),
 phaz.survival=rep(log(-log(.2)/4),15),accrual=2,followup=2.9,m=5,n=100,times=c(.8,2.1,3.4))
 #estimate based on joint model
 ps<-pssm(surv(tprog0,tprog1)~rx,surv(tdeath,cdeath)~rx,u,intervals=3,rescale=1)
